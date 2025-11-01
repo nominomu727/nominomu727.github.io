@@ -1,0 +1,17 @@
+* {
+    font-family: 'Zen Maru Gothic', Arial, sans-serif
+}
+.challenge-heading {
+    font-size: 40
+}
+h1 {
+    font-size: 60;
+    margin-bottom: 10
+}
+h2 {
+    font-size: 40;
+    margin-bottom: 10
+}
+p {
+    font-size: 20
+}
