@@ -1,13 +1,164 @@
-<head><link rel="stylesheet" href="style.css"></head>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DotGothic16">
+</head>
 
-<h1>nomi's args website!</h1>
+<h1>日本語のパズル</h1>
 <div>
-    <a class="challenge-heading" href="tutorial.html">チュートリアル</a>
-    <p>仕方のチュートリアルだけ</p>
+    <p class="challenge-heading">チュートリアル</a>
+    <p>答えはCTFという競争のように、{中かっこ}のフォーマットにしてる。反則可！</p>
+    <p>ちょうど正確に入力で注意。(A≠a, １≠1, ！≠!)</p>
+    <p>このチャレンジの答えは、{楽しんでね！}</p>
     <p>難易度: 1</p>
+    <input id="tutorial"> <button onclick="check('tutorial')">送信</button> <p id="tutorial-answer" display="none"></p>
+</div>
+<div>
+    <a class="challenge-heading" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">英語の歌</a>
+    <p>英語の能力を伸ばそう！これは80年代に作った有名な英語の歌。「感情を伝えたいだけ」というあとの歌詞は何？{中かっこ}に入れて、英語で入力する。</p>
+    <p>難易度: 2</p>
+    <input id="eigo_no_uta"> <button onclick="check('eigo_no_uta')">送信</button> <p id="eigo_no_uta-answer" display="none"></p>
 </div>
 <div>
     <a class="challenge-heading" href="test.html">テスト</a>
-    <p>サイトの作りの初めに、テストページが作った。何も隠していないでしょ？</p>
-    <p>難易度: 2</p>
+    <p>サイトの作りの初めに、テストページが作った。何も隠れていないでしょ？</p>
+    <p>難易度: 3</p>
+    <input id="test"> <button onclick="check('test')">送信</button> <p id="test-answer" display="none"></p>
 </div>
+<div>
+    <p class="challenge-heading">ジオゲッサー第１部</p>
+    <img src="geoguessr/1.jpg">
+    <p>この場所の経緯度はなに？2小数点に四捨五入して、{中かっこ}に入れる。例え: {-33.86, 151.21}</p>
+    <p>難易度: 3</p>
+    <input id="gg1"> <button onclick="check('gg1')">送信</button> <p id="gg1-answer" display="none"></p>
+</div>
+<div>
+    <p class="challenge-heading">1秒あたりのクリック数</a>
+    <p>下のボックスを1秒間に39回クリックすれば、このチャレンジが解決する。</p>
+    <p>難易度: 4</p>
+    <button onclick="cps()" style="font-size: 30px" id="cps-button">スタート</button> <p id="cps-count"></p> <p id="click-answer" display="none"></p>
+</div>
+<div>
+    <p class="challenge-heading">フォント</a>
+    <p class="hmmmmmmmmmmm">このテキストはかっこいいフォントがある！でも、私はどうやってしたの？</p>
+    <p>難易度: 5</p>
+    <input id="font"> <button onclick="check('font')">送信</button> <p id="font-answer" display="none"></p>
+</div>
+<div>
+    <p class="challenge-heading">ジオゲッサー第２部</p>
+    <img src="geoguessr/2.jpg">
+    <p>この場所の経緯度はなに？2小数点に四捨五入して、{中かっこ}に入れる。</p>
+    <p>難易度: 5</p>
+    <input id="gg2"> <button onclick="check('gg2')">送信</button> <p id="gg2-answer" display="none"></p>
+</div>
+<div>
+    <p class="challenge-heading">関数</a>
+    <p>コードの中に見る。</p>
+    <p>難易度: 7</p>
+    <input id="function"> <button onclick="check('function')">送信</button> <p id="function-answer" display="none"></p>
+</div>
+<div>
+    <p class="challenge-heading">39^(39^39)</a>
+    <p>39^(39^39)を39有効数字で解く。指数表記で表現して、{中かっこ}に入れる。四捨五入で注意！例え: {3.93939393939393939393939393939393939394e+3939393939393939}</p>
+    <p>難易度: 8</p>
+    <input id="thirty_nine"> <button onclick="check('thirty_nine')">送信</button> <p id="thirty_nine-answer" display="none"></p>
+</div>
+<div>
+    <p class="challenge-heading">0.0000034</a>
+    <p>私は1から1000000000まで34つの数字をランダムに生成して、{中かっこ}に入れた。だから、正確に答えを推測する可能性は0.0000034%だよ！あなたの運はどう？</p>
+    <p>難易度: 10</p>
+    <input id="0.0000034"> <button onclick="check('0.0000034')">送信</button> <p id="0.0000034-answer" display="none"></p>
+</div>
+
+<script>
+    const answers = {
+        tutorial: "35f41c82f515d07d6ab3893ee3688921e5eee4c80e1a42f39e9e8bc9684d4911",
+        eigo_no_uta: "134a12ca6df676c881a1fd622fde8ac138e481fa0427adf646bea93a82d79cc5",
+        test: "fcc3d2978b6619124688d7938daa1622724a1ff01d6b02077603db3d43af0db6",
+        gg1: "aec6f9dd3f739f8497f30f7ad862f3cc144e453a78d7640b9dfd1fdc3b9ced26",
+        font: "a4694e2320182201e1b15bc6de24ab8ba5a6f9f665088a27f145a0c8da0a555b",
+        gg2: "93e1cfb22f2f00b7c9afdd78617fc55f9e83b75bf58f2438ec359bd49cc915f6",
+        thirty_nine: "9f9aa555da488cbd2eff61e54c5af15bce96f6244bfffbf29e2aacb696595fa5"
+    };
+
+    const functionAnswer = '{' + crypto.randomUUID() + '}';
+
+    function myFunction() {
+        document.getElementById('function-output').textContent = functionAnswer;
+    }
+
+    const numberHexes = ['75b96bd61d66f95028c12e055b1aaaeef93bbe80a71534e6af849b277b1b4116', '232073b0c6a4bd8e7223ef43bdedf959f8ba6218dc02d364caf7079ec72baacc', '7d6644008032aa89219bea928bd33c98fe5f65b3143ee9604f7c87b69443649d', 'e2ffa144e5724ab987c066a3d0c1c3c8d0b650faf7f3a636edbd7c64836df37c', '3f5f32644b85bfd108073dd2b9cfbf663c40e63d279c071d1dfd81bd74b7d7bc', '1e14f687d2487d6ab19d31a92aa6915baf62251120df634422fbc32c7c384b8b', '8bf7f8b667ad16a5bdd058f395d676ce609b7dd53560bccdeee2337ec73284d0', 'a33a8b7f04b3801bdc63f4679ed5f8ba17903f82ff71cbc295d8bd1cedefe85d', 'a07a3505307521ef3b8346c48d939303c692b2b7cb75ae145ef145ac190dd392', '968528ce00e2e260e4c052b91ef11a14e6a6596c7e0322636ee2644921719cb5', 'f0baf9044eb814dd7793b62b6ab74da9411f3e38bfed6343226a18068f7578e8', 'a962beffa4f85c00fa58a7d1e174a83418f148746f73fd9b5274f326fc0396e4', '319e6f0f97d9659315be013cca5fd4a4c4c9064308dbd62146f178fc33b25ae8', '8ff58441dac938a326f93083b1fcb4a576e648155dc9abe9ee28ecc3137f47d3', 'ec5549ac167232c0d8a3fb2af61dd66d58e64d325a273eaf71bfb9ed31012aeb', 'ed64f2430cbf6a3cdfd80025693f42deafa17f2db5e0e0b3e9954612ee0883ef', 'ddaafad4b9b1cfc79c5a885bd0b1b8254b25b1a796c4b127b4333d6b0cc10387', 'b3519adb9a59827a96d48eaa07b5cd69a06cd8b1b5525aff0f68278b2586ee15', 'c5bb3652d5484b94f1483a1cddc2f24cff06975e6e35796ee63f440e1402b2e1', '174b6dd117b24c1dab77f0dc5a432f7a66ca5b37a2285f5f95c2152ea93bac62', '29bb1191b089023f358f6e5118eadbd181a1e14049150e46c20304c34924d19d', '18492467999d2cd7e93fffd858a4e002523656715a15c5812609dcf677a53f7f', '223e61b5db65d0e50810b7b3df6c153a0baa01acac537398f22e6338177423bf', '0d7b6a30214fed2a80afcb276508291b43955a3accf9bbfbf191096ce20377c7', 'e39ebf66961cc5efd167910ce38cf5a37c213b7d1c85ff81991b372a4475c6f3', 'cf6dc7d25a7585ae6e27156fe418e1ffac008fac101ce5ba6afc70b80b00a86d', '5d857bc38397e14f5e7daadb3c48925c289fd6c7b7eec00c90fbf35d23105068', '4601f7e3ef4f089fc1b6f2875bbdf72df8f9471ef2b9b4580e066bac313cfcfc', 'f2aa443e5bfb0476f1c2d1511b10aa00c66f4bbcbed142cab4e391aaaae913b3', '45aeb21eeba4b18829892749f6bd0a734644e94092aa5c7232e2c2465a194e95', '2b6645d053dda2f18edac2e9889ffb30fe35e09c0033c1d0cdb8fd6ea759f078', 'be5336d18afae6b6c15489d1129be7d268bb37109149a693036e5232d355a8b8', 'd177324eeef3fbf8dd3e192b31251cc8d04b12960ca5f161a29ec7a68c774e07', '521e283c6c58014e46adcd820d14719f55fe825100baec752d314e24a34e1db2'];
+
+    async function check(question) {
+        const answer = document.getElementById(question).value;
+        const hashBuffer = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(answer));
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+        const answerField = document.getElementById(question + "-answer");
+        answerField.style.display = "inline";
+
+        if (question === '0.0000034') {
+            if (numberHexes.includes(hashHex)) {
+                answerField.textContent = "正解！";
+                answerField.style.color = "#52cc52";
+            }
+            else {
+                answerField.textContent = "不正解…";
+                answerField.style.color = "#e65c5c";
+            }
+        }
+        else if (question === 'function') {
+            if (answer === functionAnswer) {
+                answerField.textContent = "正解！";
+                answerField.style.color = "#52cc52"; 
+            }
+            else {
+                answerField.textContent = "不正解…";
+                answerField.style.color = "#e65c5c";
+            }
+        }
+        else {
+            if (hashHex === answers[question]) {
+                answerField.textContent = "正解！";
+                answerField.style.color = "#52cc52";
+            }
+            else {
+                answerField.textContent = "不正解…";
+                answerField.style.color = "#e65c5c";
+            }
+        }
+    }
+
+    var clicks = 0;
+    var cpsRunning = false;
+    function cps() {
+        if (cpsRunning === false) {
+            cpsRunning = true;
+            clicks = 0;
+            setTimeout(stopCPS, 1000);
+            document.getElementById("cps-button").textContent = "クリック";
+            document.getElementById("click-answer").textContent = "";
+        }
+        clicks += 1;
+        document.getElementById("cps-count").textContent = clicks;
+    }
+
+    function stopCPS() {
+        cpsRunning = false;
+        const answerField = document.getElementById("click-answer");
+        if (clicks >= 39) {
+            answerField.textContent = "成功！";
+            answerField.style.color = "#52cc52";
+        }
+        else {
+            answerField.textContent = "失敗！";
+            answerField.style.color = "#e65c5c";
+        }
+        document.getElementById("cps-button").textContent = "スタート";
+        document.getElementById("cps-button").disabled = true;
+        setTimeout(enableCPS, 1000);
+    }
+    function enableCPS() {
+        document.getElementById("cps-button").disabled = false;
+    }
+</script>

@@ -1,11 +1,14 @@
 * {
-    font-family: 'Zen Maru Gothic', Arial, sans-serif
+    font-family: 'Zen Maru Gothic', 'Noto Sans JP', Arial, sans-serif
 }
 .challenge-heading {
     font-size: 40
 }
+img {
+    width: 50%
+}
 h1 {
-    font-size: 60;
+    font-size: 50;
     margin-bottom: 10
 }
 h2 {
@@ -15,3 +18,7 @@ h2 {
 p {
     font-size: 20
 }
+input {
+    margin-bottom: 20
+}
+.hmmmmmmmmmmm {font-family: 'DotGothic16', 'Noto Serif JP', serif;}
