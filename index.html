@@ -1,84 +1,176 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DotGothic16">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Zen Maru Gothic">
 </head>
 
 <h1>日本語のパズル</h1>
 <div>
     <p class="challenge-heading">チュートリアル</a>
-    <p>答えはCTFという競争のように、{中かっこ}のフォーマットにしてる。反則可！</p>
+    <p>答えはCTFという競争のように、{中かっこ}のフォーマットにしてる。<b>反則可！</b></p>
+    <p><b>例外: DevToolsのコンソールを使わないでください。</b>要素の検証や他のツールを使っていい。</p>
     <p>ちょうど正確に入力で注意。(A≠a, １≠1, ！≠!)</p>
     <p>このチャレンジの答えは、{楽しんでね！}</p>
     <p>難易度: 1</p>
-    <input id="tutorial"> <button onclick="check('tutorial')">送信</button> <p id="tutorial-answer" display="none"></p>
+    <input id="tutorial"> <button onclick="check('tutorial')">送信</button> <p id="tutorial-answer"></p>
+</div>
+<div>
+    <p class="challenge-heading">アイスクリーム</a>
+    <p>ルビィちゃん！　何が好き？</p>
+    <p>{}　よりも　あ･な･た♡</p>
+    <p>難易度: 1</p>
+    <input id="icecream"> <button onclick="check('icecream')">送信</button> <p id="icecream-answer"></p>
 </div>
 <div>
     <a class="challenge-heading" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">英語の歌</a>
     <p>英語の能力を伸ばそう！これは80年代に作った有名な英語の歌。「感情を伝えたいだけ」というあとの歌詞は何？{中かっこ}に入れて、英語で入力する。</p>
     <p>難易度: 2</p>
-    <input id="eigo_no_uta"> <button onclick="check('eigo_no_uta')">送信</button> <p id="eigo_no_uta-answer" display="none"></p>
-</div>
-<div>
-    <a class="challenge-heading" href="test.html">テスト</a>
-    <p>サイトの作りの初めに、テストページが作った。何も隠れていないでしょ？</p>
-    <p>難易度: 3</p>
-    <input id="test"> <button onclick="check('test')">送信</button> <p id="test-answer" display="none"></p>
+    <input id="eigo_no_uta"> <button onclick="check('eigo_no_uta')">送信</button> <p id="eigo_no_uta-answer"></p>
 </div>
 <div>
     <p class="challenge-heading">ジオゲッサー第１部</p>
     <img src="geoguessr/1.jpg">
     <p>この場所の経緯度はなに？2小数点に四捨五入して、{中かっこ}に入れる。例え: {-33.86, 151.21}</p>
+    <p>難易度: 2</p>
+    <input id="gg1"> <button onclick="check('gg1')">送信</button> <p id="gg1-answer"></p>
+</div>
+<div>
+    <p class="challenge-heading">漢字</a>
+    <p>答えは:</p>
+    <img src="misc/kanji.jpg" style="width: 200px">
+    <p>難易度: 2</p>
+    <input id="kanji"> <button onclick="check('kanji')">送信</button> <p id="kanji-answer"></p>
+</div>
+<div>
+    <p class="challenge-heading">ラテン語</a>
+    <p>私はラテン語もできる！ラテン語を英語に訳してね。</p>
+    <p>{ooklay iyay ancay itewray inyay atinlay atashiway away atingolay ouzujay}</p>
+    <p>難易度: 2</p>
+    <input id="latin"> <button onclick="check('latin')">送信</button> <p id="latin-answer"></p>
+</div>
+<div>
+    <p class="challenge-heading">神秘のファイル第２部</p>
+    <a href="files/files2.zip" download>files2.zip</a>
+    <p>難易度: 2</p>
+    <input id="file2"> <button onclick="check('file2')">送信</button> <p id="file2-answer"></p>
+</div>
+<div>
+    <a class="challenge-heading" href="test.html">テスト</a>
+    <p>サイトの作りの初めに、テストページが作った。何も隠れていないでしょ？</p>
     <p>難易度: 3</p>
-    <input id="gg1"> <button onclick="check('gg1')">送信</button> <p id="gg1-answer" display="none"></p>
-</div>
-<div>
-    <p class="challenge-heading">1秒あたりのクリック数</a>
-    <p>下のボックスを1秒間に39回クリックすれば、このチャレンジが解決する。</p>
-    <p>難易度: 4</p>
-    <button onclick="cps()" style="font-size: 30px" id="cps-button">スタート</button> <p id="cps-count"></p> <p id="click-answer" display="none"></p>
-</div>
-<div>
-    <p class="challenge-heading">フォント</a>
-    <p class="hmmmmmmmmmmm">このテキストはかっこいいフォントがある！でも、私はどうやってしたの？</p>
-    <p>難易度: 5</p>
-    <input id="font"> <button onclick="check('font')">送信</button> <p id="font-answer" display="none"></p>
+    <input id="test"> <button onclick="check('test')">送信</button> <p id="test-answer"></p>
 </div>
 <div>
     <p class="challenge-heading">ジオゲッサー第２部</p>
     <img src="geoguessr/2.jpg">
     <p>この場所の経緯度はなに？2小数点に四捨五入して、{中かっこ}に入れる。</p>
+    <p>難易度: 3</p>
+    <input id="gg2"> <button onclick="check('gg2')">送信</button> <p id="gg2-answer"></p>
+</div>
+<div>
+    <a class="challenge-heading" href="https://connections.swellgarfo.com/game/-OdCqBwWEyLmZCnp3ljf">コネクション第１部</a>
+    <p>難易度: 3</p>
+    <input id="con1"> <button onclick="check('con1')">送信</button> <p id="con1-answer"></p>
+</div>
+<div>
+    <p class="challenge-heading">1秒あたりのクリック数</a>
+    <p>下のボックスを1秒間に39回クリックすれば、このチャレンジが解決する。</p>
+    <p>難易度: 4</p>
+    <button onclick="cps()" style="font-size: 30px" id="cps-button">スタート</button> <p id="cps-count"></p> <p id="click-answer"></p>
+</div>
+<div>
+    <p class="challenge-heading">真っ暗闇</p>
+    <img src="misc/darkness.jpg">
+    <p>光の最後の欠片も消えたところ、道の跡を探せるのか？</p>
+    <p>難易度: 4</p>
+    <input id="darkness"> <button onclick="check('darkness')">送信</button> <p id="darkness-answer"></p>
+</div>
+<div>
+    <p class="challenge-heading">ジオゲッサー第３部</p>
+    <img src="geoguessr/3.jpg">
+    <p>この場所の経緯度はなに？2小数点に四捨五入して、{中かっこ}に入れる。</p>
+    <p>難易度: 4</p>
+    <input id="gg3"> <button onclick="check('gg3')">送信</button> <p id="gg3-answer"></p>
+</div>
+<div>
+    <p class="challenge-heading">フォント</a>
+    <p class="hmmmmmmmmmmm">このテキストはかっこいいフォントがある！でも、私はどうやってしたの？</p>
     <p>難易度: 5</p>
-    <input id="gg2"> <button onclick="check('gg2')">送信</button> <p id="gg2-answer" display="none"></p>
+    <input id="font"> <button onclick="check('font')">送信</button> <p id="font-answer"></p>
+</div>
+<div>
+    <p class="challenge-heading">神秘のファイル第３部</p>
+    <a href="files/files3.py" download>files3.py</a>
+    <p>難易度: 5</p>
+    <input id="file3"> <button onclick="check('file3')">送信</button> <p id="file3-answer"></p>
+</div>
+<div>
+    <p class="challenge-heading">神秘のファイル第１部</p>
+    <a href="files/-  () [].osu" download>-  () [].osu</a>
+    <p>難易度: 6</p>
+    <input id="file1"> <button onclick="check('file1')">送信</button> <p id="file1-answer"></p>
+</div>
+<div>
+    <p class="challenge-heading">神秘のファイル第４部</p>
+    <a href="files/files4.ccmmws" download>files4.ccmmws</a>
+    <p>大文字に入力して、{中かっこ}に入れる。</p>
+    <p>難易度: 6</p>
+    <input id="file4"> <button onclick="check('file4')">送信</button> <p id="file4-answer"></p>
+</div>
+<div>
+    <a class="challenge-heading" href="https://connections.swellgarfo.com/game/-OdD40K6XlxI8YfkXPpL">コネクション第２部</a>
+    <p>難易度: 6</p>
+    <input id="con2"> <button onclick="check('con2')">送信</button> <p id="con2-answer"></p>
 </div>
 <div>
     <p class="challenge-heading">関数</a>
     <p>コードの中に見る。</p>
     <p>難易度: 7</p>
-    <input id="function"> <button onclick="check('function')">送信</button> <p id="function-answer" display="none"></p>
+    <input id="function"> <button onclick="check('function')">送信</button> <p id="function-answer"></p>
 </div>
 <div>
     <p class="challenge-heading">39^(39^39)</a>
     <p>39^(39^39)を39有効数字で解く。指数表記で表現して、{中かっこ}に入れる。四捨五入で注意！例え: {3.93939393939393939393939393939393939394e+3939393939393939}</p>
     <p>難易度: 8</p>
-    <input id="thirty_nine"> <button onclick="check('thirty_nine')">送信</button> <p id="thirty_nine-answer" display="none"></p>
+    <input id="thirty_nine"> <button onclick="check('thirty_nine')">送信</button> <p id="thirty_nine-answer"></p>
+</div>
+<div>
+    <p class="challenge-heading">かカ力</a>
+    <p>10秒に100回、かかカか力かどうか識別すれば、このチャレンジが解決する。不正解に答えれば、1秒刑が与えられる。</p>
+    <p>難易度: 8</p>
+    <p style="font-size: 50px" id="ka-box"></p>
+    <button id="ka-1" onclick="kaClick('か')">スタート</button> <button id="ka-2" onclick="kaClick('カ')" style="display: none"></button> <button id="ka-3" onclick="kaClick('力')" style="display: none"></button> <p id="ka-answer" style="display: inline;"></p>
+    <p id="ka-count"></p>
+</div>
+<div>
+    <p class="challenge-heading">SAN値直葬</a>
+    <p>10秒に100回、下のボックスの色の正確のRGB値を識別して16進コードに換算すれば、このチャレンジが解決する。フォーマット: #aaaaaa</p>
+    <p>難易度: 9</p>
+    <div style="width: 200px; height: 120px; border-radius: 10px; margin-bottom: 20px; background-color: #aaaaaa;" id="colour-box"></div>
+    <input id="colour"> <button id="colour-button" onclick="colourClick()">スタート</button> <p id="colour-answer" style="display: inline;"></p>
+    <p id="colour-count"></p>
 </div>
 <div>
     <p class="challenge-heading">0.0000034</a>
     <p>私は1から1000000000まで34つの数字をランダムに生成して、{中かっこ}に入れた。だから、正確に答えを推測する可能性は0.0000034%だよ！あなたの運はどう？</p>
     <p>難易度: 10</p>
-    <input id="0.0000034"> <button onclick="check('0.0000034')">送信</button> <p id="0.0000034-answer" display="none"></p>
+    <input id="0.0000034"> <button onclick="check('0.0000034')">送信</button> <p id="0.0000034-answer"></p>
+</div>
+<div id="admin-panel">
+    <p class="challenge-heading">怪獣になりたい</a>
+    <p>すべて倒して</p>
+    <p>すべて壊すの</p>
+    <p>このチャレンジを解決するのに、アドミンのアカウントに侵入して、ウエブサイトの自滅のプロセスを行う。私は知ることは、古いパスワードのシステムがまだコードの中にあることだけ…</p>
+    <p>難易度: 11</p>
+    <div id="login-panel">
+        <div><label>ユーザー名：</label><input id="admin_username"></div>  
+        <div><label>パスワード：</label><input id="admin_password"></div>
+        <button onclick="adminLogin()">ログイン</button> <p id="admin_password-answer" style="display: inline"></p>
+    </div>
 </div>
 
 <script>
-    const answers = {
-        tutorial: "35f41c82f515d07d6ab3893ee3688921e5eee4c80e1a42f39e9e8bc9684d4911",
-        eigo_no_uta: "134a12ca6df676c881a1fd622fde8ac138e481fa0427adf646bea93a82d79cc5",
-        test: "fcc3d2978b6619124688d7938daa1622724a1ff01d6b02077603db3d43af0db6",
-        gg1: "aec6f9dd3f739f8497f30f7ad862f3cc144e453a78d7640b9dfd1fdc3b9ced26",
-        font: "a4694e2320182201e1b15bc6de24ab8ba5a6f9f665088a27f145a0c8da0a555b",
-        gg2: "93e1cfb22f2f00b7c9afdd78617fc55f9e83b75bf58f2438ec359bd49cc915f6",
-        thirty_nine: "9f9aa555da488cbd2eff61e54c5af15bce96f6244bfffbf29e2aacb696595fa5"
-    };
+    // 関数のコード
 
     const functionAnswer = '{' + crypto.randomUUID() + '}';
 
@@ -86,7 +178,140 @@
         document.getElementById('function-output').textContent = functionAnswer;
     }
 
+    // アドミンのことのコード
+
+    function stringToInt(str) {
+        resultBits = Array.from(
+            new TextEncoder().encode(str), 
+            bits => bits.toString(2).padStart(8, '0'),
+        ).join('');
+        return BigInt("0b" + resultBits, 2);
+    }
+
+    function generateRandomKey(length) {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let result = '';
+        const charactersLength = characters.length;
+        for (let i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result
+    }
+
+    function adminLoginEncryption(inputString, inputKey) {
+        return stringToInt(inputString) ^ stringToInt(inputKey.repeat(Math.ceil(inputString.length / inputKey.length)));
+    }
+
+    var loggedIn = false;
+
+    //somewhere else the private key and password were generated:
+    //const key = generateRandomKey(3);
+    //const adminPassword = crypto.randomUUID();
+
+    //function oldAdminLogin() {
+    //    if (document.getElementById("admin_username").value === "mikuadmin39" && adminLoginEncryption(document.getElementById("admin-password").value, key) === 161418930325514028326543713363988427687208948157721487569399543293743959353785785205556n) {
+    //        loggedIn = true;
+    //    }
+    //}
+
+    async function adminLogin() {
+        if (await check('admin_password') == true) {
+            loggedIn = true;
+            document.getElementById('login-panel').style.display = "none";
+            document.getElementById('admin-panel').innerHTML += "<h2>アドミンダッシュボード</h2>";
+            document.getElementById('admin-panel').innerHTML += "<h3>ファイルビューア</h3>";
+            document.getElementById('admin-panel').innerHTML += "<p>.txtファイルをアップしたら、内容が見える！</p>"
+            document.getElementById('admin-panel').innerHTML += "<input id='kaijuu-upload' type='file' accept=''.txt'>";
+            document.getElementById('admin-panel').innerHTML += "<div id='kaijuu-text'></div>";
+            document.getElementById('admin-panel').innerHTML += "<h3>自滅プロセス</h3>"
+            document.getElementById('admin-panel').innerHTML += "<p>これをしないでください。</p>"
+            document.getElementById('admin-panel').innerHTML += "<label>自滅鍵：</label><input id='kaijuu'> <button onclick='selfDestructionSequence()'>自滅する</button> <p id='kaijuu-answer'></p>";
+            document.getElementById('kaijuu-upload').addEventListener("change", uploadFile);
+        }
+        else {
+            document.getElementById("admin_password-answer").textContent = "パスワードは不正解！"
+            document.getElementById("admin_password-answer").style.color = "#e65c5c";
+        }
+    }
+    
+    const selfDestructKey = '{' + crypto.randomUUID() + '}';
+    const reader = new FileReader();
+
+    function uploadFile() {
+        if (loggedIn === true) {
+            reader.onload = () => {
+                document.getElementById('kaijuu-text').innerHTML = reader.result;
+            };
+            reader.readAsText(document.getElementById('kaijuu-upload').files[0]);
+        } else {
+            document.getElementById("admin_password-answer").textContent = "禁止行為！"
+            document.getElementById("admin_password-answer").style.color = "#e65c5c";
+        }
+    }
+
+    function adminScriptRunner() {
+        if (loggedIn === true) {
+            const scripts = document.querySelectorAll('script');
+            scripts.forEach(script => eval(script.textContent));
+        } else {
+            document.getElementById("admin_password-answer").textContent = "禁止行為！"
+            document.getElementById("admin_password-answer").style.color = "#e65c5c";
+        }
+    }
+
+    var destructionSequence = null;
+
+    function disableDestruction() {
+        document.getElementById('you-should-disable-this').disabled = true;
+    }
+
+    async function selfDestructionSequence() {
+        if (await check('kaijuu') === true) {
+            destructionSequence = crypto.randomUUID();
+            document.getElementById('admin-panel').innerHTML += "<div id='destruction-sequence'></div>"
+            document.getElementById('destruction-sequence').innerHTML += "<h3 style=\"color:#ff0000; display:block\">本当に自滅する？</h3>";
+            document.getElementById('destruction-sequence').innerHTML += "<button id='you-should-disable-this' onclick=\"selfDestruct('" + destructionSequence + "')\" disabled>はい</button>"
+            document.getElementById('destruction-sequence').innerHTML += "<button onclick='cancelDestruction()'>いいえ</button>";
+            setInterval(disableDestruction, 5);
+        }
+    }
+
+    function selfDestruct(sequenceKey) {
+        if (sequenceKey === destructionSequence) {
+            document.body.innerHTML = "<img src='https://static.wikia.nocookie.net/projectsekai/images/5/55/Kaijuu_ni_Naritai_Game_Cover.png'><h1 style='color:#52cc52'>成功！</h1>";
+        }
+    }
+
+    function cancelDestruction() {
+        document.getElementById('destruction-sequence').remove();
+    }
+
+    // 答えの確認のコード
+
+    const answers = {
+        tutorial: "35f41c82f515d07d6ab3893ee3688921e5eee4c80e1a42f39e9e8bc9684d4911",
+        eigo_no_uta: "134a12ca6df676c881a1fd622fde8ac138e481fa0427adf646bea93a82d79cc5",
+        kanji: "350651a866d946415b2de0abeed5539d8032e60d81357483feb47277a6503ad1",
+        icecream: "7fa061664c1c3c87bf40c0e69c0e180fe1e13cbb946b44ff89c2b1ae7abfd7d5",
+        gg1: "aec6f9dd3f739f8497f30f7ad862f3cc144e453a78d7640b9dfd1fdc3b9ced26",
+        latin: "d910e4a2c5f1f0110fa627e0adcb3f8d3cdb3e5d1232876b95b0753b68cf2f5b",
+        file2: "d7c1d32c7658acbfc7e9bf9f6921a326750144033be5d42ee628c06e1e23a893",
+        test: "fcc3d2978b6619124688d7938daa1622724a1ff01d6b02077603db3d43af0db6",
+        gg2: "93e1cfb22f2f00b7c9afdd78617fc55f9e83b75bf58f2438ec359bd49cc915f6",
+        con1: "b58f1e0e60ff2e03980e2da28a0ad8f20e4754e945e41093fe7d6d9a9b1a0d84",
+        darkness: "5f03d458d9f61815460d1fca30da29c8b9ab112de4cc003dbf9202f757da5454",
+        gg3: "458deede142341d232b3fa75b4cdfb8cba543346878c2a1d163d1c12cde6cf4d",
+        font: "a4694e2320182201e1b15bc6de24ab8ba5a6f9f665088a27f145a0c8da0a555b",
+        file3: "2d71c71435fea85975f20f9e814628f7d4cc25583c8a7d86bd6d0287acbf4044",
+        file1: "602018de416e1b27a8da6d2b8d460c1bbb10db7cd1c1618a6fe88c9701fe23ff",
+        file4: "718613372fc2597fa637ee7451595ad85c1933d11e1c79fa19563ddab965b6ca",
+        con2: "5731e6f63827aa6fff2b4cccb62f458beb28d71547ec0ec1758be6cd7736fdec",
+        thirty_nine: "9f9aa555da488cbd2eff61e54c5af15bce96f6244bfffbf29e2aacb696595fa5",
+        admin_password: "f04fa7bea6358fb0c35891cbd09aa7fe846449c80dc200e3b6175a8b0412f72d"
+    };
+
     const numberHexes = ['75b96bd61d66f95028c12e055b1aaaeef93bbe80a71534e6af849b277b1b4116', '232073b0c6a4bd8e7223ef43bdedf959f8ba6218dc02d364caf7079ec72baacc', '7d6644008032aa89219bea928bd33c98fe5f65b3143ee9604f7c87b69443649d', 'e2ffa144e5724ab987c066a3d0c1c3c8d0b650faf7f3a636edbd7c64836df37c', '3f5f32644b85bfd108073dd2b9cfbf663c40e63d279c071d1dfd81bd74b7d7bc', '1e14f687d2487d6ab19d31a92aa6915baf62251120df634422fbc32c7c384b8b', '8bf7f8b667ad16a5bdd058f395d676ce609b7dd53560bccdeee2337ec73284d0', 'a33a8b7f04b3801bdc63f4679ed5f8ba17903f82ff71cbc295d8bd1cedefe85d', 'a07a3505307521ef3b8346c48d939303c692b2b7cb75ae145ef145ac190dd392', '968528ce00e2e260e4c052b91ef11a14e6a6596c7e0322636ee2644921719cb5', 'f0baf9044eb814dd7793b62b6ab74da9411f3e38bfed6343226a18068f7578e8', 'a962beffa4f85c00fa58a7d1e174a83418f148746f73fd9b5274f326fc0396e4', '319e6f0f97d9659315be013cca5fd4a4c4c9064308dbd62146f178fc33b25ae8', '8ff58441dac938a326f93083b1fcb4a576e648155dc9abe9ee28ecc3137f47d3', 'ec5549ac167232c0d8a3fb2af61dd66d58e64d325a273eaf71bfb9ed31012aeb', 'ed64f2430cbf6a3cdfd80025693f42deafa17f2db5e0e0b3e9954612ee0883ef', 'ddaafad4b9b1cfc79c5a885bd0b1b8254b25b1a796c4b127b4333d6b0cc10387', 'b3519adb9a59827a96d48eaa07b5cd69a06cd8b1b5525aff0f68278b2586ee15', 'c5bb3652d5484b94f1483a1cddc2f24cff06975e6e35796ee63f440e1402b2e1', '174b6dd117b24c1dab77f0dc5a432f7a66ca5b37a2285f5f95c2152ea93bac62', '29bb1191b089023f358f6e5118eadbd181a1e14049150e46c20304c34924d19d', '18492467999d2cd7e93fffd858a4e002523656715a15c5812609dcf677a53f7f', '223e61b5db65d0e50810b7b3df6c153a0baa01acac537398f22e6338177423bf', '0d7b6a30214fed2a80afcb276508291b43955a3accf9bbfbf191096ce20377c7', 'e39ebf66961cc5efd167910ce38cf5a37c213b7d1c85ff81991b372a4475c6f3', 'cf6dc7d25a7585ae6e27156fe418e1ffac008fac101ce5ba6afc70b80b00a86d', '5d857bc38397e14f5e7daadb3c48925c289fd6c7b7eec00c90fbf35d23105068', '4601f7e3ef4f089fc1b6f2875bbdf72df8f9471ef2b9b4580e066bac313cfcfc', 'f2aa443e5bfb0476f1c2d1511b10aa00c66f4bbcbed142cab4e391aaaae913b3', '45aeb21eeba4b18829892749f6bd0a734644e94092aa5c7232e2c2465a194e95', '2b6645d053dda2f18edac2e9889ffb30fe35e09c0033c1d0cdb8fd6ea759f078', 'be5336d18afae6b6c15489d1129be7d268bb37109149a693036e5232d355a8b8', 'd177324eeef3fbf8dd3e192b31251cc8d04b12960ca5f161a29ec7a68c774e07', '521e283c6c58014e46adcd820d14719f55fe825100baec752d314e24a34e1db2'];
+
 
     async function check(question) {
         const answer = document.getElementById(question).value;
@@ -117,6 +342,24 @@
                 answerField.style.color = "#e65c5c";
             }
         }
+        else if (question === 'admin_password') {
+            if (document.getElementById("admin_username").value === "mikuadmin39" && hashHex === answers[question]) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else if (question === 'kaijuu') {
+            if (answer === selfDestructKey) {
+                return true; 
+            }
+            else {
+                answerField.textContent = "自滅鍵は不正解！";
+                answerField.style.color = "#e65c5c";
+                return false;
+            }
+        }
         else {
             if (hashHex === answers[question]) {
                 answerField.textContent = "正解！";
@@ -128,6 +371,8 @@
             }
         }
     }
+
+    // ミニゲームのコード
 
     var clicks = 0;
     var cpsRunning = false;
@@ -160,5 +405,115 @@
     }
     function enableCPS() {
         document.getElementById("cps-button").disabled = false;
+    }
+
+    var colour = "";
+    var colourRunning = false;
+    var colourCorrect = 0;
+    function colourClick() {
+        if (colourRunning === false) {
+            colourRunning = true;
+            colourCorrect = 0;
+            document.getElementById("colour-count").textContent = colourCorrect;
+            setTimeout(stopColour, 10000);
+            document.getElementById("colour-button").textContent = "送信";
+            document.getElementById("colour-answer").textContent = "";
+            colour = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+            document.getElementById("colour-box").style.backgroundColor = colour;
+            return
+        }
+
+        if (document.getElementById("colour").value === colour) {
+            document.getElementById("colour-answer").textContent = "";
+            colourCorrect += 1;
+            colour = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+            document.getElementById("colour-box").style.backgroundColor = colour;
+        }
+        else {
+            document.getElementById("colour-answer").textContent = ""
+            document.getElementById("colour-answer").textContent = "不正解…";
+            document.getElementById("colour-answer").style.color = "#e65c5c";
+        }
+        document.getElementById("colour-count").textContent = colourCorrect;
+    }
+
+    function stopColour() {
+        colourRunning = false;
+        const answerField = document.getElementById("colour-answer");
+        if (colourCorrect >= 100) {
+            answerField.textContent = "成功！";
+            answerField.style.color = "#52cc52";
+        }
+        else {
+            answerField.textContent = "失敗！";
+            answerField.style.color = "#e65c5c";
+        }
+        document.getElementById("colour-button").textContent = "スタート";
+        document.getElementById("colour-button").disabled = true;
+        document.getElementById("colour-box").style.backgroundColor = "#aaaaaa";
+        setTimeout(enableColour, 1000);
+    }
+    function enableColour() {
+        document.getElementById("colour-button").disabled = false;
+    }
+
+    var ka = "";
+    var kaRunning = false;
+    var kaCorrect = false;
+    const kas = ["か", "カ", "力"];
+    function kaClick(ans) {
+        if (kaRunning === false) {
+            kaRunning = true;
+            kaCorrect = 0;
+            setTimeout(stopKa, 10000);
+            document.getElementById("ka-1").textContent = "ひらがな";
+            document.getElementById("ka-2").textContent = "カタカナ";
+            document.getElementById("ka-2").style.display = "inline";
+            document.getElementById("ka-3").textContent = "ちから";
+            document.getElementById("ka-3").style.display = "inline";
+            document.getElementById("ka-answer").textContent = "";
+            document.getElementById("ka-box").textContent = kas[Math.floor(Math.random() * kas.length)];
+            document.getElementById("ka-count").textContent = kaCorrect;
+            return
+        }
+
+        if (document.getElementById("ka-box").textContent === ans) {
+            kaCorrect += 1;
+            document.getElementById("ka-answer").textContent = "";
+            document.getElementById("ka-box").textContent = kas[Math.floor(Math.random() * kas.length)];
+        }
+        else {
+            document.getElementById("ka-answer").textContent = "不正解…";
+            document.getElementById("ka-answer").style.color = "#e65c5c";
+            document.getElementById("ka-1").disabled = true;
+            document.getElementById("ka-2").disabled = true;
+            document.getElementById("ka-3").disabled = true;
+            setTimeout(enableKa, 1000);
+        }
+        document.getElementById("ka-count").textContent = kaCorrect;
+    }
+
+    function stopKa() {
+        kaRunning = false;
+        const answerField = document.getElementById("ka-answer");
+        if (kaCorrect >= 100) {
+            answerField.textContent = "成功！";
+            answerField.style.color = "#52cc52";
+        }
+        else {
+            answerField.textContent = "失敗！";
+            answerField.style.color = "#e65c5c";
+        }
+        document.getElementById("ka-1").textContent = "スタート";
+        document.getElementById("ka-2").style.display = "none";
+        document.getElementById("ka-3").style.display = "none";
+        document.getElementById("ka-1").disabled = true;
+        document.getElementById("ka-box").textContent = "";
+        setTimeout(enableKa, 1000);
+    }
+    function enableKa() {
+        document.getElementById("ka-1").disabled = false;
+        document.getElementById("ka-2").disabled = false;
+        document.getElementById("ka-3").disabled = false;
     }
 </script>
