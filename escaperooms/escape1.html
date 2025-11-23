@@ -1,0 +1,193 @@
+<head>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DotGothic16">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Zen Maru Gothic">
+    <script src="https://kit.fontawesome.com/10b2785d8b.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+    .square {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        border-color: black;
+        border-width: 4;
+        border-style: solid;
+        background-color: rgb(180, 180, 180);
+        cursor: default;
+    }
+</style>
+
+<h1>脱出ゲーム #1</h1>
+<h3>光の格子がある部屋</h3>
+
+<p>要素の検証やAIなどの反則をしないでください。グーグルを使っていい。</p>
+
+<i class="fa-solid fa-battery-full" style="position: absolute; top: -30px; left: -30px; cursor: pointer; color: #5555ff; font-size: 50px" id="battery"></i>
+
+<i class="fa-regular fa-square" style="color: #161677; font-size: 100px; margin-left: -20px;" id="battery-box"></i><br>
+
+<p>全部のマスを緑にしてね！</p>
+
+<div id="grids"></div><br>
+
+<button id="solve-button" onclick="escape()" style="font-size: 20px" disabled>脱出する</button>
+<p id="solution"></p>
+
+<script>
+    const grids = document.getElementById("grids");
+    var level = 1;
+
+    function checkAdjacency(id1, id2) {
+        coords1 = id1.split(",");
+        coords2 = id2.split(",");
+        if ((Math.abs(parseInt(coords1[0]) - parseInt(coords2[0])) <= 1 && Math.abs(parseInt(coords1[1]) - parseInt(coords2[1])) === 0) || (Math.abs(parseInt(coords1[0]) - parseInt(coords2[0])) === 0 && Math.abs(parseInt(coords1[1]) - parseInt(coords2[1])) <= 1)) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    function checkSolved() {
+        const squares = document.getElementsByClassName("square");
+        for (let k = 0; k < squares.length; k++) {
+            if (squares[k].style.backgroundColor != "rgb(180, 255, 180)") {
+                return
+            }
+        }
+        if (level === 5) {
+            document.getElementById("solve-button").disabled = false;
+        }
+        else {
+            level += 1;
+            createGrid(level);
+        }
+    }
+
+    function createGrid(size, grey = false) {
+        const oldSquares = document.getElementsByClassName("square");
+        for (let k = 0; k < oldSquares.length; k++) {
+            oldSquares[k].id = "";
+        }
+
+        const grid = document.createElement("div");
+        grid.className = "grid";
+        grids.appendChild(grid);
+
+        for (let i = 0; i < size; i++) {
+            var row = document.createElement("div");
+            for (let j = 0; j < size; j++) {
+                var square = document.createElement("div");
+                square.id = i.toString() + "," + j.toString();
+                square.addEventListener("click", function() {
+                    const squares = document.getElementsByClassName("square");
+                    for (let k = 0; k < squares.length; k++) {
+                        const element = squares[k];
+                        if (checkAdjacency(element.id, this.id)) {
+                            if (element.style.backgroundColor == "rgb(180, 255, 180)") {
+                                element.style.backgroundColor = "rgb(255, 180, 180)";
+                            }
+                            else if (element.style.backgroundColor == "rgb(255, 180, 180)") {
+                                element.style.backgroundColor = "rgb(180, 255, 180)";
+                            }
+                        }
+                    };
+                    checkSolved();
+                })
+                square.className = "square";
+                if (grey === false) {
+                    square.style.cursor = "pointer";
+                    square.style.backgroundColor = "rgb(255, 180, 180)";
+                }
+                row.appendChild(square);
+            }
+            grid.appendChild(row);
+        }
+        grid.appendChild(document.createElement("br"));
+    }
+
+    function escape() {
+        document.getElementById("solution").textContent = "{あなたの光を追いかけて、25時で。}";
+    }
+
+    createGrid(level, true);
+</script>
+
+<script>
+    var batteryOn = false;
+
+    function checkPositions() {
+        const batteryBox = document.getElementById("battery-box").getBoundingClientRect();
+        const battery = document.getElementById("battery").getBoundingClientRect();
+        const batteryX = battery.left + battery.width / 2;
+        const batteryY = battery.top + battery.height / 2;
+        if (batteryX > batteryBox.left && batteryX < batteryBox.right && batteryY > batteryBox.top && batteryY < batteryBox.bottom && batteryOn === false) {
+            batteryOn = true;
+            const grid = document.querySelectorAll(".grid");
+            grid.forEach(element => {element.remove();});
+            level = 1;
+            createGrid(level);
+            const newSquares = document.getElementsByClassName("square");
+            for (let k = 0; k < newSquares.length; k++) {
+                newSquares[k].style.backgroundColor = "rgb(255, 180, 180)";
+            }
+        }
+        else if (batteryX > batteryBox.left && batteryX < batteryBox.right && batteryY > batteryBox.top && batteryY < batteryBox.bottom) {
+            return
+        }
+        else {
+            batteryOn = false;
+            const grid = document.querySelectorAll(".grid");
+            grid.forEach(element => {element.remove();});
+            level = 1;
+            createGrid(level, true);
+            document.getElementById("solve-button").disabled = true;
+        }
+    }
+
+    // copied from https://www.w3schools.com/howto/howto_js_draggable.asp bc i cant code
+    dragElement(document.getElementById("battery"));
+
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(elmnt.id + "header")) {
+            // if present, the header is where you move the DIV from:
+            document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        } else {
+            // otherwise, move the DIV from anywhere inside the DIV:
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            // stop moving when mouse button is released:
+            document.onmouseup = null;
+            document.onmousemove = null;
+            checkPositions();
+        }
+    }
+</script>
