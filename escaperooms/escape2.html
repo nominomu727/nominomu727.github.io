@@ -1,0 +1,524 @@
+<head>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Zen Maru Gothic">
+    <script src="https://kit.fontawesome.com/10b2785d8b.js" crossorigin="anonymous"></script>
+
+    <style>
+        .itembox {
+            display: inline-block;
+            width: 100px;
+            border-style: solid;
+            border-width: 2px;
+            border-color: black;
+            text-align: center;
+            margin-right: -6px;
+            margin-bottom: 15px;
+        }
+        .emoji {
+            background-color: #cccccc;
+            font-size: 55px;
+            height: 80px;
+        }
+        .itemlabel {
+            background-color: #cccccc;
+            font-size: 15px;
+            border-bottom-style: solid;
+            border-bottom-width: 2px;
+            height: 25px;
+            padding: 5px;
+        }
+        .itemnumber {
+            font-size: 18px;
+            padding: 5px;
+        }
+        .tradebox {
+            font-size: 17px;
+        }
+        .tradeboxcontainer {
+            display: inline-block;
+            margin-right: 30px;
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<h1>クラフトができる部屋</h1>
+
+<p>脱出するために、桃色の鍵を作る！</p>
+
+<div>
+    <div class="itembox">
+        <div class="emoji">🍒</div>
+        <div class="itemlabel">さくらんぼ</div>
+        <div class="itemnumber" id="🍒">250560</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🍓</div>
+        <div class="itemlabel">いちご</div>
+        <div class="itemnumber" id="🍓">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🍇</div>
+        <div class="itemlabel">ぶどう</div>
+        <div class="itemnumber" id="🍇">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🍊</div>
+        <div class="itemlabel">デコポン</div>
+        <div class="itemnumber" id="🍊">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🍅</div>
+        <div class="itemlabel">かき</div>
+        <div class="itemnumber" id="🍅">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🍎</div>
+        <div class="itemlabel">りんご</div>
+        <div class="itemnumber" id="🍎">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🍐</div>
+        <div class="itemlabel">なし</div>
+        <div class="itemnumber" id="🍐">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🍑</div>
+        <div class="itemlabel">もも</div>
+        <div class="itemnumber" id="🍑">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🍍</div>
+        <div class="itemlabel">パイナップル</div>
+        <div class="itemnumber" id="🍍">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🍈</div>
+        <div class="itemlabel">メロン</div>
+        <div class="itemnumber" id="🍈">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🍉</div>
+        <div class="itemlabel">スイカ</div>
+        <div class="itemnumber" id="🍉">0</div>
+    </div>
+</div>
+<div>
+    <div class="itembox">
+        <div class="emoji">◯</div>
+        <div class="itemlabel">メロンの殻</div>
+        <div class="itemnumber" id="◯">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">◉</div>
+        <div class="itemlabel">スイカの殻</div>
+        <div class="itemnumber" id="◉">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🪵</div>
+        <div class="itemlabel">木材</div>
+        <div class="itemnumber" id="🪵">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🦯</div>
+        <div class="itemlabel">棒</div>
+        <div class="itemnumber" id="🦯">0</div>
+    </div>
+    <div class="itembox" style="width: 135px; margin-right: 10px;">
+        <div class="emoji">✨</div>
+        <div class="itemlabel">スイートマジック</div>
+        <div class="itemnumber" id="✨">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">⚬</div>
+        <div class="itemlabel">小石</div>
+        <div class="itemnumber" id="⚬">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🪨</div>
+        <div class="itemlabel">石</div>
+        <div class="itemnumber" id="🪨">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🗿</div>
+        <div class="itemlabel">モアイ</div>
+        <div class="itemnumber" id="🗿">0</div>
+    </div>
+    <div class="itembox" style="margin-right: 10px;">
+        <div class="emoji">✧</div>
+        <div class="itemlabel">モアイの魔法</div>
+        <div class="itemnumber" id="✧">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">⛏</div>
+        <div class="itemlabel">木製ツルハシ</div>
+        <div class="itemnumber" id="⛏">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">⛏️</div>
+        <div class="itemlabel">石製ツルハシ</div>
+        <div class="itemnumber" id="⛏️">0</div>
+    </div>
+</div>
+<div>
+    <div class="itembox">
+        <div class="emoji">🥗</div>
+        <div class="itemlabel">果物の集まり</div>
+        <div class="itemnumber" id="🥗">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🟫</div>
+        <div class="itemlabel">土地</div>
+        <div class="itemnumber" id="🟫">0</div>
+    </div>
+    <div class="itembox" style="width: 135px;">
+        <div class="emoji">🧽</div>
+        <div class="itemlabel">チキンナゲット</div>
+        <div class="itemnumber" id="🧽">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🐔</div>
+        <div class="itemlabel">鶏</div>
+        <div class="itemnumber" id="🐔">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🪴</div>
+        <div class="itemlabel">庭には二羽鶏</div>
+        <div class="itemnumber" id="🪴">0</div>
+    </div>
+    <div class="itembox" style="margin-right: 10px;">
+        <div class="emoji">💴</div>
+        <div class="itemlabel">お金</div>
+        <div class="itemnumber" id="💴">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">⬛</div>
+        <div class="itemlabel">地下の石</div>
+        <div class="itemnumber" id="⬛">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🔩</div>
+        <div class="itemlabel">鉄塊</div>
+        <div class="itemnumber" id="🔩">0</div>
+    </div>
+    <div class="itembox" style="margin-right: 10px;">
+        <div class="emoji">⬜</div>
+        <div class="itemlabel">鉄</div>
+        <div class="itemnumber" id="⬜">0</div>
+    </div>
+    <div class="itembox">
+        <div class="emoji">🔑</div>
+        <div class="itemlabel">桃色の鍵</div>
+        <div class="itemnumber" id="🔑">0</div>
+    </div>
+</div>
+
+<div id="tradeboxes1" class="tradeboxcontainer">
+    <div class="tradebox">
+        <input type="text" size=1 value="1" id="value0"></input> x: <span style="background-color: #ccffcc" id="trade0">2🍒 -> 1🍓</span> <button onclick="trade(0)">取引</button>
+    </div>
+</div>
+<div id="tradeboxes2" class="tradeboxcontainer"></div>
+<div id="tradeboxes3" class="tradeboxcontainer"></div>
+<div id="tradeboxes4" class="tradeboxcontainer"></div>
+<div id="tradeboxes5" class="tradeboxcontainer"></div><br>
+<div id="tradeboxes6" class="tradeboxcontainer"></div><br>
+<div id="tradeboxes7" class="tradeboxcontainer">
+    <div class="expobox">
+        A=<input type="text" size=1 id="expovalue0"></input> <span id="expotrade0">A^2🥗 + ✧ -> A🟫</span> <button onclick="expoTrade(0)">取引</button>
+    </div>
+</div>
+<div id="tradeboxes8" class="tradeboxcontainer">
+    <div class="expobox">
+        A=<input type="text" size=1 id="expovalue1"></input> <span id="expotrade1">A^2🟫 + 2✧ -> A⬛</span> <button onclick="expoTrade(1)">取引</button>
+    </div>
+</div>
+<div id="tradeboxes9" class="tradeboxcontainer"></div>
+
+<br><button disabled id="solutionbutton" style="font-size: 20px" onclick="revealsolution()">脱出する</button>
+<p id="solution"></p>
+
+<script>
+    const trades = [
+        [[[2, '🍒']], [[1, '🍓']]],
+        [[[2, '🍓']], [[1, '🍇']]],
+        [[[2, '🍇']], [[1, '🍊']]],
+        [[[2, '🍊']], [[1, '🍅']]],
+        [[[2, '🍅']], [[1, '🍎']]],
+        [[[2, '🍎']], [[1, '🍐']]],
+        [[[2, '🍐']], [[1, '🍑']]],
+        [[[2, '🍑']], [[1, '🍍']]],
+        [[[2, '🍍']], [[1, '🍈']]],
+        [[[2, '🍈']], [[1, '🍉']]],
+        [[[1, '🍈']], [[1, '◯']]],
+        [[[1, '◯']], [[1, '🪵']]],
+        [[[1, '🍉']], [[1, '◉'], [1, '✨']]],
+        [[[1, '◉']], [[1, '🪵']]],
+        [[[1, '🍇']], [[1, '🦯']]],
+        [[[1, '🍑']], [[1, '⚬']]],
+        [[[4, '⚬']], [[1, '🪨']]],
+        [[[12, '🪨']], [[1, '🗿']]],
+        [[[1, '🗿']], [[1, '✧']]],
+        [[[2, '🦯'], [3, '🪵'], [1, '✨']], [[1, '⛏']]],
+        [[[2, '🦯'], [3, '🪨'], [1, '✨']], [[1, '⛏️']]],
+        [[[1, '🍒'], [1, '🍓'], [1, '🍇'], [1, '🍊'], [1, '🍅'], [1, '🍎'], [1, '🍐'], [1, '🍑'], [1, '🍍']], [[1, '🥗']]],
+        [[[1, '🟫'], [1, '⛏']], [[1, '🧽']]],
+        [[[9, '🧽']], [[1, '🐔']]],
+        [[[1, '🟫'], [2, '🐔']], [[1, '🪴']]],
+        [[[1, '🪴']], [[1, '💴']]],
+        [[[1, '⬛'], [1, '⛏️']], [[1, '🔩']]],
+        [[[9, '🔩']], [[1, '⬜']]],
+        [[[1, '⬜'], [1, '⛏️'], [1, '🍑'], [1, '✨'], [1, '💴']], [[1, '🔑']]]
+    ]
+
+    const expotrades = [
+        [[['A^2', '🥗'], [1, '✧']], [['A', '🟫']]],
+        [[['A^2', '🟫'], [2, '✧']], [['A', '⬛']]]
+    ]
+
+    function canTrade(tradenumber, quantity) {
+        if (quantity === "") {
+            quantity = 1;
+        } else {
+            quantity = parseInt(quantity);
+        }
+        const trade = trades[tradenumber];
+        for (let i = 0; i < trades[tradenumber][0].length; i++) {
+            if (parseInt(document.getElementById(trade[0][i][1]).textContent) < quantity * trades[tradenumber][0][i][0]) {
+                return "#ffcccc";
+            }
+        }
+        return "#ccffcc";
+    }
+
+    function canExpoTrade(tradenumber, quantity) {
+        if (quantity === "") {
+            quantity = "A";
+        }
+        if (quantity === "A") {
+            return "#ffffff";
+        }
+        else {
+            quantity = parseInt(quantity);
+        }
+        const expotrade = expotrades[tradenumber];
+        for (let i = 0; i < expotrades[tradenumber][0].length; i++) {
+            if (typeof expotrades[tradenumber][0][i][0] === "number") {
+                if (parseInt(document.getElementById(expotrade[0][i][1]).textContent) < expotrades[tradenumber][0][i][0]) {
+                    return "#ffcccc";
+                }
+            }
+            else if (expotrades[tradenumber][0][i][0] === "A^2") {
+                if (parseInt(document.getElementById(expotrade[0][i][1]).textContent) < quantity * quantity) {
+                    return "#ffcccc";
+                }
+            }
+        }
+        return "#ccffcc";
+    }
+
+    function parseTrade(trade, quantity) {
+        // trade format: [[list of 2-element input lists], [list of 2-element output lists]]
+        // example: [[2, '🍒']], [[1, '🍓']]
+        // access: trade[0 = inputs, 1 = outputs][item number][0 = amount, 1 = item]
+        if (quantity === "") {
+            quantity = 1;
+        } else {
+            quantity = parseInt(quantity);
+        }
+        var result = "";
+        for (let i = 0; i < trade[0].length; i++) {
+            result += (quantity * trade[0][i][0]).toString() + trade[0][i][1] + " + ";
+        }
+        result = result.slice(0, -3);
+        result += " -> ";
+        for (let i = 0; i < trade[1].length; i++) {
+            result += (quantity * trade[1][i][0]).toString() + trade[1][i][1] + " + ";
+        }
+        result = result.slice(0, -3);
+        return result;
+    }
+
+    function parseExpoTrade(trade, quantity) {
+        if (quantity === "") {
+            var result = "";
+            for (let i = 0; i < trade[0].length; i++) {
+                if (typeof trade[0][i][0] === "number") {
+                    result += trade[0][i][0].toString() + trade[0][i][1] + " + ";
+                } else {
+                    result += trade[0][i][0] + trade[0][i][1] + " + ";
+                }
+            }
+            result = result.slice(0, -3);
+            result += " -> ";
+            for (let i = 0; i < trade[1].length; i++) {
+                if (typeof trade[1][i][0] === "number") {
+                    result += trade[1][i][0].toString() + trade[1][i][1] + " + ";
+                } else {
+                    result += trade[1][i][0] + trade[1][i][1] + " + ";
+                }
+            }
+            result = result.slice(0, -3);
+            return result;
+        } else {
+            quantity = parseInt(quantity);
+        }
+        var result = "";
+        for (let i = 0; i < trade[0].length; i++) {
+            if (typeof trade[0][i][0] === "number") {
+                result += trade[0][i][0].toString() + trade[0][i][1] + " + ";
+            } else if (trade[0][i][0] === "A") {
+                result += (quantity).toString() + trade[0][i][1] + " + ";
+            } else if (trade[0][i][0] === "A^2") {
+                result += (quantity * quantity).toString() + trade[0][i][1] + " + ";
+            }
+        }
+        result = result.slice(0, -3);
+        result += " -> ";
+        for (let i = 0; i < trade[1].length; i++) {
+            if (typeof trade[1][i][0] === "number") {
+                result += trade[0][i][0].toString() + trade[1][i][1] + " + ";
+            } else if (trade[1][i][0] === "A") {
+                result += (quantity).toString() + trade[1][i][1] + " + ";
+            } else if (trade[1][i][0] === "A^2") {
+                result += (quantity * quantity).toString() + trade[1][i][1] + " + ";
+            }
+        }
+        result = result.slice(0, -3);
+        return result;
+    }
+
+    for (let i = 1; i < 5; i++) {
+        element = document.createElement("div");
+        element.classList.add("tradebox");
+        element.innerHTML = `<input type='text' size=1 value='1' id='value${i.toString()}'></input> x: <span style='background-color: #ffcccc' id='trade${i.toString()}'>${parseTrade(trades[i], 1)}</span> <button onclick='trade(${i.toString()})'>取引</button>`
+        document.getElementById("tradeboxes1").appendChild(element);
+    }
+    for (let i = 5; i < 10; i++) {
+        element = document.createElement("div");
+        element.classList.add("tradebox");
+        element.innerHTML = `<input type='text' size=1 value='1' id='value${i.toString()}'></input> x: <span style='background-color: #ffcccc' id='trade${i.toString()}'>${parseTrade(trades[i], 1)}</span> <button onclick='trade(${i.toString()})'>取引</button>`
+        document.getElementById("tradeboxes2").appendChild(element);
+    }
+    for (let i = 10; i < 15; i++) {
+        element = document.createElement("div");
+        element.classList.add("tradebox");
+        element.innerHTML = `<input type='text' size=1 value='1' id='value${i.toString()}'></input> x: <span style='background-color: #ffcccc' id='trade${i.toString()}'>${parseTrade(trades[i], 1)}</span> <button onclick='trade(${i.toString()})'>取引</button>`
+        document.getElementById("tradeboxes3").appendChild(element);
+    }
+    for (let i = 15; i < 19; i++) {
+        element = document.createElement("div");
+        element.classList.add("tradebox");
+        element.innerHTML = `<input type='text' size=1 value='1' id='value${i.toString()}'></input> x: <span style='background-color: #ffcccc' id='trade${i.toString()}'>${parseTrade(trades[i], 1)}</span> <button onclick='trade(${i.toString()})'>取引</button>`
+        document.getElementById("tradeboxes4").appendChild(element);
+    }
+    for (let i = 19; i < 21; i++) {
+        element = document.createElement("div");
+        element.classList.add("tradebox");
+        element.innerHTML = `<input type='text' size=1 value='1' id='value${i.toString()}'></input> x: <span style='background-color: #ffcccc' id='trade${i.toString()}'>${parseTrade(trades[i], 1)}</span> <button onclick='trade(${i.toString()})'>取引</button>`
+        document.getElementById("tradeboxes5").appendChild(element);
+    }
+    for (let i = 21; i < 22; i++) {
+        element = document.createElement("div");
+        element.classList.add("tradebox");
+        element.innerHTML = `<input type='text' size=1 value='1' id='value${i.toString()}'></input> x: <span style='background-color: #ffcccc' id='trade${i.toString()}'>${parseTrade(trades[i], 1)}</span> <button onclick='trade(${i.toString()})'>取引</button>`
+        document.getElementById("tradeboxes6").appendChild(element);
+    }
+    for (let i = 22; i < 26; i++) {
+        element = document.createElement("div");
+        element.classList.add("tradebox");
+        element.innerHTML = `<input type='text' size=1 value='1' id='value${i.toString()}'></input> x: <span style='background-color: #ffcccc' id='trade${i.toString()}'>${parseTrade(trades[i], 1)}</span> <button onclick='trade(${i.toString()})'>取引</button>`
+        document.getElementById("tradeboxes7").appendChild(element);
+    }
+    for (let i = 26; i < 28; i++) {
+        element = document.createElement("div");
+        element.classList.add("tradebox");
+        element.innerHTML = `<input type='text' size=1 value='1' id='value${i.toString()}'></input> x: <span style='background-color: #ffcccc' id='trade${i.toString()}'>${parseTrade(trades[i], 1)}</span> <button onclick='trade(${i.toString()})'>取引</button>`
+        document.getElementById("tradeboxes8").appendChild(element);
+    }
+    for (let i = 28; i < 29; i++) {
+        element = document.createElement("div");
+        element.classList.add("tradebox");
+        element.innerHTML = `<input type='text' size=1 value='1' id='value${i.toString()}'></input> x: <span style='background-color: #ffcccc' id='trade${i.toString()}'>${parseTrade(trades[i], 1)}</span> <button onclick='trade(${i.toString()})'>取引</button>`
+        document.getElementById("tradeboxes9").appendChild(element);
+    }
+
+    for (let i = 0; i < document.getElementsByClassName("tradebox").length; i++) {
+        document.getElementById("value" + i.toString()).addEventListener("input", function(event) {
+            event.target.value = event.target.value.replace(/[^0-9]/g, "");
+            document.getElementById("trade" + i.toString()).style.backgroundColor = canTrade(i, event.target.value);
+            document.getElementById("trade" + i.toString()).textContent = parseTrade(trades[i], event.target.value);
+        });
+    }
+
+    for (let i = 0; i < document.getElementsByClassName("expobox").length; i++) {
+        document.getElementById("expovalue" + i.toString()).addEventListener("input", function(event) {
+            event.target.value = event.target.value.replace(/[^0-9]/g, "");
+            document.getElementById("expotrade" + i.toString()).style.backgroundColor = canExpoTrade(i, event.target.value);
+            document.getElementById("expotrade" + i.toString()).textContent = parseExpoTrade(expotrades[i], event.target.value);
+        });
+    }
+    
+    function trade(tradenumber) {
+        const trade = trades[tradenumber];
+        if (document.getElementById("value" + tradenumber.toString()).value === "") {
+            return
+        }
+        const quantity = parseInt(document.getElementById("value" + tradenumber.toString()).value);
+        if (canTrade(tradenumber.toString(), quantity) === "#ccffcc") {
+            for (let i = 0; i < trade[0].length; i++) {
+                document.getElementById(trade[0][i][1]).textContent = parseInt(document.getElementById(trade[0][i][1]).textContent) - quantity * trade[0][i][0];
+            }
+            for (let i = 0; i < trade[1].length; i++) {
+                document.getElementById(trade[1][i][1]).textContent = parseInt(document.getElementById(trade[1][i][1]).textContent) + quantity * trade[1][i][0];
+            }
+            for (let i = 0; i < document.getElementsByClassName("tradebox").length; i++) {
+                document.getElementById("trade" + i.toString()).style.backgroundColor = canTrade(i.toString(), document.getElementById("value" + i.toString()).value);
+            }
+            for (let i = 0; i < document.getElementsByClassName("expobox").length; i++) {
+                document.getElementById("expotrade" + i.toString()).style.backgroundColor = canExpoTrade(i.toString(), document.getElementById("expovalue" + i.toString()).value);
+            }
+        }
+        if (parseInt(document.getElementById("🔑").textContent) > 0) {
+            document.getElementById("solutionbutton").disabled = false;
+        }
+    }
+
+    function expoTrade(tradenumber) {
+        if (document.getElementById("value" + tradenumber.toString()).value === "") {
+            return
+        }
+        const trade = expotrades[tradenumber];
+        const quantity = parseInt(document.getElementById("expovalue" + tradenumber.toString()).value);
+        if (canExpoTrade(tradenumber.toString(), quantity) === "#ccffcc") {
+            for (let i = 0; i < trade[0].length; i++) {
+                if (typeof trade[0][i][0] === "number") {
+                    document.getElementById(trade[0][i][1]).textContent = parseInt(document.getElementById(trade[0][i][1]).textContent) - trade[0][i][0];
+                } else if (trade[0][i][0] === "A") {
+                    document.getElementById(trade[0][i][1]).textContent = parseInt(document.getElementById(trade[0][i][1]).textContent) - quantity;
+                } else if (trade[0][i][0] === "A^2") {
+                    document.getElementById(trade[0][i][1]).textContent = parseInt(document.getElementById(trade[0][i][1]).textContent) - quantity * quantity;
+                }
+            }
+            for (let i = 0; i < trade[1].length; i++) {
+                if (typeof trade[1][i][0] === "number") {
+                    document.getElementById(trade[1][i][1]).textContent = parseInt(document.getElementById(trade[1][i][1]).textContent) + trade[1][i][0];
+                } else if (trade[1][i][0] === "A") {
+                    document.getElementById(trade[1][i][1]).textContent = parseInt(document.getElementById(trade[1][i][1]).textContent) + quantity;
+                } else if (trade[1][i][0] === "A^2") {
+                    document.getElementById(trade[1][i][1]).textContent = parseInt(document.getElementById(trade[1][i][1]).textContent) + quantity * quantity;
+                }
+            }
+            for (let i = 0; i < document.getElementsByClassName("tradebox").length; i++) {
+                document.getElementById("trade" + i.toString()).style.backgroundColor = canTrade(i.toString(), document.getElementById("value" + i.toString()).value);
+            }
+            for (let i = 0; i < document.getElementsByClassName("expobox").length; i++) {
+                document.getElementById("expotrade" + i.toString()).style.backgroundColor = canExpoTrade(i.toString(), document.getElementById("expovalue" + i.toString()).value);
+            }
+        }
+    }
+
+    function revealsolution() {
+        document.getElementById("solution").textContent = "{今日の数学の授業で、250560個のさくらんぼだけを使ってどんな部屋も脱出できることを学んだ}";
+    }
+</script>
