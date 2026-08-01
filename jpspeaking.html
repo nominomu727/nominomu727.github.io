@@ -1,0 +1,427 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Noto Sans JP", sans-serif;
+            color: white;
+            background-color: black;
+            text-align: center;
+            user-select: none;
+        }
+        .title {
+            font-size: 150px;
+            margin-top: 50px;
+            display: block;
+            color: #f2b3ff;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+        h2 {
+            font-size: 75px;
+            font-weight: 200;
+            color: #beb3ff;
+            margin: 20px;
+        }
+        h3 {
+            margin: 40px;
+            font-size: 40px;
+            font-weight: 200;
+            color: #beb3ff;
+        }
+        .selector {
+            display: inline-block;
+            vertical-align: middle;
+            margin-bottom: 15px;
+            width: 130px;
+            border-color: #beb3ff;
+            border-width: 5px;
+            border-radius: 15px;
+            color: #beb3ff;
+            font-size: 50px;
+            font-family: "Space Mono", monospace;
+        }
+        .timercheckbox {
+            display: inline-block;
+            vertical-align: middle;
+            margin-bottom: 10px;
+            width: 50px;
+            height: 50px;
+            margin-left: 15px;
+            border-color: #beb3ff;
+            border-width: 5px;
+            border-radius: 15px;
+            color: #beb3ff;
+            font-size: 50px;
+            border-style: solid;
+            cursor: pointer;
+        }
+        .startbutton {
+            display: inline-block;
+            align-content: center;
+            padding-left: 10px;
+            padding-bottom: 7px;
+            width: 300px;
+            height: 100px;
+            border-color: #b3fffa;
+            border-width: 5px;
+            border-radius: 15px;
+            color: #b3fffa;
+            font-size: 50px;
+            border-style: solid;
+            cursor: pointer;
+            margin: auto;
+            margin-top: 30px;
+        }
+        .smallbutton {
+            display: inline-block;
+            align-content: center;
+            padding-left: 4px;
+            padding-bottom: 4px;
+            width: 150px;
+            height: 60px;
+            border-color: #b3fffa;
+            border-width: 5px;
+            border-radius: 15px;
+            color: #b3fffa;
+            font-size: 30px;
+            border-style: solid;
+            cursor: pointer;
+            margin: auto;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        .startbutton:hover {
+            color: white;
+            border-color: #5df2e8;
+            background-color: #5df2e8;
+            font-weight: 700;
+        }
+        .pausebutton {
+            border-color: #e1a18c;
+            color: #e1a18c;
+        }
+        .endbutton {
+            border-color: #e5919f;
+            color: #e5919f;
+        }
+        .pausebutton:hover {
+            background-color: #e1a18c;
+            color: white;
+            font-weight: 700;
+        }
+        .endbutton:hover {
+            background-color: #e5919f;
+            color: white;
+            font-weight: 700;
+        }
+        .question {
+            font-size: 75px;
+            margin-top: 50px;
+            display: block;
+            color: #f2b3ff;
+            font-weight: 200;
+            margin-bottom: 50px;
+            font-family: "Zen Kurenaido", sans-serif;
+        }
+        .bigtimer {
+            font-size: clamp(39px, 15vw, 250px);
+            display: block;
+            color: #beb3ff;
+            font-family: 'Space Mono', monospace;
+            margin-top: 10px;
+        }
+        .timeover, .avg {
+            font-size: clamp(25px, 5vw, 100px);
+            color: #beb3ff;
+            margin-bottom: -20px;
+            text-align: left;
+        }
+        .avg {
+            margin-bottom: 50px;
+            margin-top: -20px;
+            font-size: clamp(25px, 4vw, 67px);
+        }
+        .timeover {
+            font-weight: 700;
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 90%;
+        }
+        th, td {
+            width: 10%;
+            font-size: 35px;
+            border-width: 2px;
+            border-color: #beb3ff;
+            border-style: solid;
+            color: #beb3ff;
+            margin: 0;
+            padding: 5px;
+            align-content: center;
+            font-weight: 400;
+            height: 100%;
+        }
+        td {
+            font-family: 'Space Mono', monospace;
+        }
+        .questioncell {
+            width: 75%;
+        }
+        .questionquestioncell {
+            font-family: 'Zen Kurenaido', sans-serif;
+            user-select: text;
+        }
+        .ending2 {
+            display: inline-block;
+            width: 39%;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="menu">
+    <h1 class="title">日本語を話そう！</h1>
+    <div id="timeselector">
+        <h2>時間： <input type="text" class="selector" inputmode="numeric" id="timeinput" oninput="this.value = this.value.replace(/[^0-9]/g, '');" value=10> 分</h2>
+        <h3>タイマーを見せる <div class="timercheckbox" onclick="toggletimer()"></div></h3>
+    </div>
+    <div class="startbutton" onclick="start()">スタート！</div>
+</div>
+
+<div id="actualthing">
+    <h1 class="question nontimer" id="question"></h1>
+    <div class="buttons nontimer">
+        <div class="smallbutton pausebutton nontimer" id="pausebutton" onclick="pause()">停止する</div>
+        <div class="startbutton nontimer" onclick="next()">次の質問！</div>
+        <div class="smallbutton endbutton nontimer" onclick="end()">終わる</div>
+    </div>
+    <div class="meow">
+        <div class="ending hidden timerclass" id="ending">
+            <h3 class="timeover hidden" id="timeover">時間が終わった！</h3>
+            <h2 class="bigtimer timerclass" id="bigtimer">00:00</h2>
+            <h3 class="avg hidden timerclass" id="avg"></h3>
+        </div><img class="ending2 hidden timerclass" id="ending2">
+    </div>
+    <table class="timerclass hidden" id="table"></table>
+</div>
+
+<script>
+    const rawquestions = `何才ですか。
+どこで生まれましたか。
+英語のほかに、何語を話せますか。
+しゅみは何ですか。
+どんな音楽をよく聞きますか。
+がっきがひけますか。
+スポーツは、何が好きですか。
+一番好きな食べ物は何ですか。
+何人家族ですか。
+しゅうまつに、ご家族と出かけますか。
+家でペットをかっていますか。
+お父さんとお母さんと、どちらの方が好きですか。
+友達の中で、一番仲のいい人は、どんな人ですか。
+日本人の友達がいますか。
+こまった時は、友達とりょうしんと、どちらの方がそうだんしやすいですか。
+どこに住んでいますか。
+ずっとあそこに住んでいましたか。
+自分の町が好きですか。
+あなたの家の近所で、何ができますか。
+ふだんどこで買い物をしますか。
+どんな家のきそくがありますか。
+近所の人たちと仲のいいですか。
+毎朝、何時におきますか。
+どうやって、学校に行きますか。
+ほうか後、何をしますか。
+毎日、何時間ぐらい勉強しますか。
+よくテレビをみますか。どんな番組が好きですか。
+よく本を読みますか。どんな本が好きですか。
+よくコンピューターを使いますか。
+週末に、よくすることは、何ですか。
+ひまな時に、友達とあそぶのと、一人でいるのと、どちらの方が好きですか。
+学校は、どうですか。
+どんな学校ですか。
+今年、どんな科目を勉強していますか。
+日本語を何年間ならいましたか。
+日本語の先生はどんな人ですか。
+あなたの学校では、日本語のほかに、どんな外国語を教えていますか。
+高校年生と、年生の生活と、どうちがいますか。
+学校の売店で、どんな物を買うことができますか。
+学校にはどんなきそくがありますか。
+学校でスポーツやクラブをしていますか。
+学生生活で、一番楽しかったことは、何ですか。
+あなたは、けんこうだと思いますか。
+けんこうのために何をしていますか。
+たいてい、何時間ぐらいねますか。
+けんこう的な食べ物を食べていますか。
+けんこうのために、うんどうやスポーツをしていますか。
+どんな時にストレスを感じますか。
+ストレスを感じたら、何をしてかいしょうしますか。
+けんこうのために、うんどうをすることと、食べ物に気をつけることと、どちらの方が大事だと思いますか。
+だと思いますか。
+勉強にあきた時、何をしますか。
+ご家族は、みなさん、けんこうだと思いますか。
+こんどの休みに、どこか、行きたい所がありますか。
+つぎの休みは、どうやってすごすつもりですか。
+外国に行ったことがありますか。
+よく旅行をしますか。
+オーストラリアのどこに行ったことがありますか。
+どの国に行ってみたいですか。なぜでしょうか。
+日本人の友達がオーストラリアに来たら、どこにつれて行ってあげたいですか。
+外国からおきゃくが来たら、どんなおみやげを買うことをすすめますか。
+なぜ、日本語の勉強をはじめましたか。
+日本の何が好きですか。
+日本文化のいいと思うところは、何ですか。
+日本とオーストラリアと、どちらの方が好きですか。
+日本に行ったことがありますか。
+日本に行ったら、どこに行ってみたいですか。
+日本に行ったら、何がしたいですか。
+日本でホームステイをするのと、一人で住むのと、どちらの方がいいと思いますか。
+将来、日本に住んでみたいと思いますか。
+今、アルバイトをしていますか。
+HSC が終わったら/そつぎょうしけんした後で、何がしたいですか。
+来年何をするつもりですか。
+しょうらい、日本語を使った仕事をしたいですか。
+しょうらい、ならった日本語がやくにたつと思いますか。
+しょうらい、日本語の勉強をつづけたいですか。
+しょうらい、どんな所にすみたいですか。
+しょうらい、どんな生活がしたいですか。
+しょうらい、日本で働いてみたいですか。
+ずっとおなじ仕事をしたいと思いますか。
+かんきょうをまもるために何をしていますか。
+かんきょうをまもるために何をしなければなりませんか。
+古いふくを持っている時どうしましょうか。
+家でリサイクリングをしていますか。`
+    var questions = rawquestions.split('\n');
+    
+    console.log(questions);
+    
+    var timeron = false;
+    var time = 600;
+    var elapsed = 0;
+    var interval;
+    var running = false;
+    var questionnumber = 1;
+    var questionstart = 0;
+    var questionhistory = [];
+    var newquestion = "";
+
+    const actualthing = document.getElementById("actualthing");
+    const menu = document.getElementById("menu");
+    Array.from(actualthing.children).forEach(child => {
+        child.classList.add("hidden");
+    });
+
+    function start() {
+        Array.from(menu.children).forEach(child => {
+            child.classList.add("hidden");
+        });
+        Array.from(actualthing.children).forEach(child => {
+            if (child.id !== "timeover" && child.id !== "table" && child.id !== "avg" && child.id !== "ending2") {
+                child.classList.remove("hidden");
+            }
+        });
+        if (timeron == false) {
+            Array.from(document.getElementsByClassName("timerclass")).forEach(button => {
+                button.classList.add("hidden");
+            });
+        }
+
+        time = parseInt(document.getElementById("timeinput").value, 10) * 60;
+        startTimer()
+        newquestion = questions[Math.floor(Math.random() * questions.length)];
+        questions.splice(questions.indexOf(newquestion), 1);
+        document.getElementById("question").textContent = newquestion;
+    }
+
+    function startTimer() {
+        running = true;
+        interval = setInterval(function() {
+            elapsed += 1;
+            var minutes = Math.floor(elapsed / 60);
+            var seconds = elapsed % 60;
+            document.getElementById("bigtimer").innerHTML = minutes.toString().padStart(2, "0") + ":" + seconds.toString().padStart(2, "0");
+            if (elapsed >= time) {
+                document.getElementById("bigtimer").style.fontWeight = 700;
+                Array.from(document.getElementsByClassName("timerclass")).forEach(button => {
+                    button.classList.remove("hidden");
+                });
+                Array.from(document.getElementsByClassName("nontimer")).forEach(button => {
+                    button.classList.add("hidden");
+                });
+                document.getElementById("timeover").classList.remove("hidden");
+                clearInterval(interval);
+            }
+        }, 1000);
+    }
+
+    function next() {
+        if (questionnumber == 1) {
+            document.getElementById("table").innerHTML = `<tr>
+            <th>＃</th>
+            <th class=questioncell>質問</th>
+            <th>時間</th>
+            </tr>`;
+        }
+        const a = elapsed - questionstart;
+        const s = a.toString().padStart(2, "0");
+        var row = document.createElement("tr");
+        row.innerHTML = `<td>${questionnumber}</td>
+        <td class=questionquestioncell>${newquestion}</td>
+        <td>${Math.floor(a / 60)}:${s}</td>`;
+        document.getElementById("table").appendChild(row);
+        questionstart = elapsed;
+        questionnumber++;
+        newquestion = questions[Math.floor(Math.random() * questions.length)];
+        questions.splice(questions.indexOf(newquestion), 1);
+        document.getElementById("question").textContent = newquestion;
+    }
+
+    function pause() {
+        if (running) {
+            clearInterval(interval);
+            document.getElementById("pausebutton").innerHTML = "再開する";
+            running = false;
+        } else {
+            startTimer();
+            document.getElementById("pausebutton").innerHTML = "停止する";
+        }
+    }
+
+    function end() {
+        clearInterval(interval);
+        time = elapsed;
+        document.getElementById("bigtimer").style.fontWeight = 700;
+        Array.from(document.getElementsByClassName("timerclass")).forEach(button => {
+            button.classList.remove("hidden");
+        });
+        Array.from(document.getElementsByClassName("nontimer")).forEach(button => {
+            button.classList.add("hidden");
+        });
+        document.getElementById("avg").innerHTML = `平均答え長さ：${Math.round(questionstart / (questionnumber - 1))}秒`;
+        document.getElementById("timeover").classList.remove("hidden");
+        document.getElementById("bigtimer").style.textAlign = "left";
+        document.getElementById("ending").style.width = "55%";
+        document.getElementById("ending").style.display = "inline-block";
+        document.getElementById("ending2").src = `otsukare/${(Math.floor(26 * Math.random())).toString()}.png`
+    }
+
+    function toggletimer() {
+        if (timeron) {
+            Array.from(document.getElementsByClassName("timercheckbox")).forEach(button => {
+                button.style.backgroundColor = "#000000";
+            });
+            timeron = false;
+        } else {
+            Array.from(document.getElementsByClassName("timercheckbox")).forEach(button => {
+                button.style.backgroundColor = "#beb3ff";
+            });
+            timeron = true;
+        }
+    }
+</script>
