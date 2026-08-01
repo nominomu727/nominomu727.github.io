@@ -250,7 +250,7 @@
 日本語を何年間ならいましたか。
 日本語の先生はどんな人ですか。
 あなたの学校では、日本語のほかに、どんな外国語を教えていますか。
-高校年生と、年生の生活と、どうちがいますか。
+高校2年生と、3年生の生活と、どうちがいますか。
 学校の売店で、どんな物を買うことができますか。
 学校にはどんなきそくがありますか。
 学校でスポーツやクラブをしていますか。
@@ -263,7 +263,6 @@
 どんな時にストレスを感じますか。
 ストレスを感じたら、何をしてかいしょうしますか。
 けんこうのために、うんどうをすることと、食べ物に気をつけることと、どちらの方が大事だと思いますか。
-だと思いますか。
 勉強にあきた時、何をしますか。
 ご家族は、みなさん、けんこうだと思いますか。
 こんどの休みに、どこか、行きたい所がありますか。
@@ -298,9 +297,7 @@ HSC が終わったら/そつぎょうしけんした後で、何がしたいで
 古いふくを持っている時どうしましょうか。
 家でリサイクリングをしていますか。`
     var questions = rawquestions.split('\n');
-    
-    console.log(questions);
-    
+
     var timeron = false;
     var time = 600;
     var elapsed = 0;
@@ -326,10 +323,9 @@ HSC が終わったら/そつぎょうしけんした後で、何がしたいで
                 child.classList.remove("hidden");
             }
         });
-        if (timeron == false) {
-            Array.from(document.getElementsByClassName("timerclass")).forEach(button => {
-                button.classList.add("hidden");
-            });
+        if (timeron) {
+            document.getElementById("bigtimer").classList.remove("hidden");
+            document.getElementById("ending").classList.remove("hidden");
         }
 
         time = parseInt(document.getElementById("timeinput").value, 10) * 60;
@@ -355,15 +351,7 @@ HSC が終わったら/そつぎょうしけんした後で、何がしたいで
             var seconds = elapsed % 60;
             document.getElementById("bigtimer").innerHTML = minutes.toString().padStart(2, "0") + ":" + seconds.toString().padStart(2, "0");
             if (elapsed >= time) {
-                document.getElementById("bigtimer").style.fontWeight = 700;
-                Array.from(document.getElementsByClassName("timerclass")).forEach(button => {
-                    button.classList.remove("hidden");
-                });
-                Array.from(document.getElementsByClassName("nontimer")).forEach(button => {
-                    button.classList.add("hidden");
-                });
-                document.getElementById("timeover").classList.remove("hidden");
-                clearInterval(interval);
+                end();
             }
         }, 1000);
     }
@@ -381,7 +369,7 @@ HSC が終わったら/そつぎょうしけんした後で、何がしたいで
         var row = document.createElement("tr");
         row.innerHTML = `<td>${questionnumber}</td>
         <td class=questionquestioncell>${newquestion}</td>
-        <td>${Math.floor(a / 60)}:${s}</td>`;
+        <td>${Math.floor(a / 60)}:${(s % 60).toString().padStart(2, "0")}</td>`;
         document.getElementById("table").appendChild(row);
         questionstart = elapsed;
         questionnumber++;
