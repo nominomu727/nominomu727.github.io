@@ -336,7 +336,15 @@ HSC が終わったら/そつぎょうしけんした後で、何がしたいで
         startTimer()
         newquestion = questions[Math.floor(Math.random() * questions.length)];
         questions.splice(questions.indexOf(newquestion), 1);
-        document.getElementById("question").textContent = newquestion;
+        document.getElementById("question").textContent = "⠀";
+        var letter = 1;
+        var asdf = setInterval(function() {
+            document.getElementById("question").textContent = newquestion.slice(0, letter);
+            letter += 1;
+            if (letter > newquestion.length) {
+                clearInterval(asdf);
+            }
+        }, 150);
     }
 
     function startTimer() {
@@ -379,7 +387,15 @@ HSC が終わったら/そつぎょうしけんした後で、何がしたいで
         questionnumber++;
         newquestion = questions[Math.floor(Math.random() * questions.length)];
         questions.splice(questions.indexOf(newquestion), 1);
-        document.getElementById("question").textContent = newquestion;
+        var letter = 1;
+        document.getElementById("question").textContent = "⠀";
+        var asdf = setInterval(function() {
+            document.getElementById("question").textContent = newquestion.slice(0, letter);
+            letter += 1;
+            if (letter > newquestion.length) {
+                clearInterval(asdf);
+            }
+        }, 150);
     }
 
     function pause() {
